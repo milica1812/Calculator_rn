@@ -5,31 +5,27 @@ import Button from './components/Button';
 import InputValue from './components/InputValue';
 
 export default function App() {
-  const [buttonName, setButtonName] = useState(""); 
-
-  // const handleNum = (value) => {
-  //   setButtonName(value);
-  // };
+  const [buttonName, setButtonName] = useState('');
 
   return (
     <View style={styles.container}>
-      <InputValue inputValue={buttonName}/>
-      <Button buttonName={"CE"} />
-      <Button buttonName={"0"} setButtonNameInput={setButtonName} />
-      <Button buttonName={"%"} />
-      <Button buttonName={"/"} />
-      <Button buttonName={"7"} />
-      <Button buttonName={"8"} />
-      <Button buttonName={"9"} />
-      <Button buttonName={"*"} />
-      <Button buttonName={"4"} />
-      <Button buttonName={"5"} />
-      <Button buttonName={"6"} />
-      <Button buttonName={"-"} />
-      <Button buttonName={"1"} />
-      <Button buttonName={"2"} />
-      <Button buttonName={"3"} />
-      <Button buttonName={"+"} />
+      <InputValue inputValue={buttonName} />
+      <Button buttonName={"CE"} onPressBtn={setButtonName}/>
+      <Button buttonName={"0"} onPressBtn={setButtonName} />
+      <Button buttonName={"%"} onPressBtn={setButtonName} />
+      <Button buttonName={"/"} onPressBtn={setButtonName} />
+      <Button buttonName={"7"} onPressBtn={setButtonName} />
+      <Button buttonName={"8"} onPressBtn={setButtonName} />
+      <Button buttonName={"9"} onPressBtn={setButtonName} />
+      <Button buttonName={"*"} onPressBtn={setButtonName} />
+      <Button buttonName={"4"} onPressBtn={setButtonName} />
+      <Button buttonName={"5"} onPressBtn={setButtonName} />
+      <Button buttonName={"6"} onPressBtn={setButtonName} />
+      <Button buttonName={"-"} onPressBtn={setButtonName} />
+      <Button buttonName={"1"} onPressBtn={setButtonName} />
+      <Button buttonName={"2"} onPressBtn={setButtonName} />
+      <Button buttonName={"3"} onPressBtn={setButtonName} />
+      <Button buttonName={"+"} onPressBtn={setButtonName} />
     </View>
   );
 }

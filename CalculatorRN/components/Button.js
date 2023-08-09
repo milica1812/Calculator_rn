@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default ({ buttonName, setButtonNameInput }) => {
+export default ({ buttonName, onPressBtn, setButtonNameInput }) => {
+   const [previousNum,setPreviousNum] = useState('0');
+
     const handleNum = () => {
-        console.log('--------------test', buttonName);
-        setButtonNameInput(buttonName);
+        if (buttonName === "CE") {
+            setButtonNameInput("0");
+            setPreviousNum("0");
+        } else {
+            const newButtonName = previousNum + buttonName; // Pretpostavka: previousNum je definisan u vašoj komponenti
+            setButtonNameInput(newButtonName);
+            setPreviousNum(newButtonName);
+        }
+        console.log('--------------test1', previousNum);
+        console.log('--------------test2', buttonName);
+        onPressBtn(buttonName);
     };
 
     return (
